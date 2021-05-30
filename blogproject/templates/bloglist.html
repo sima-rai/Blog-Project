@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3>All Blogs</h3>
+{% for blog in allblogs %}
+<li><h4>{{blog.title}}</h4></li>
+<img src="{{blog.image.url}}" width="100">
+<p>Created By <span>{{blog.author.username}}</span>{{blog.date|timesince}} ago </p>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>base</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js">
+</head>
+
+<body>
+    <a href="/login">Login</a>
+    <a href="/signup">Signup</a>
+    <br>
+    {% if request.user.is_authenticated %}
+    <h4>Logged in as: <span style="color:blue">{{request.user}}</span></h4>
+    <a href="/logout/">logout</a>
+    {% else %}
+    <a href="/login"></a>
+    <a href="/signup"></a>
+    <a href="/blog/create/">BlogCreate</a>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+
+
+
+    
+</body>
+
+</html>
